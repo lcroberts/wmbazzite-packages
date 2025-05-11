@@ -4,7 +4,6 @@ Name:    ghostty
 Version: 1.1.3
 Release: %autorelease
 Summary:  Fast, native, feature-rich terminal emulator pushing modern features.
-# Main package is EUPL-1.2, remaining licenses are from statically linked dependencies
 License: MIT
 URL:     https://github.com/ghostty-org/%{name}
 Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/v%{version}.tar.gz
