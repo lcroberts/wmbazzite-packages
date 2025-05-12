@@ -1,0 +1,33 @@
+---
+name: trigger-builds
+on:
+  schedule:
+    - cron: "05 10 * * *" # 10:05am UTC everyday
+  workflow_dispatch:
+
+jobs:
+  trigger-builds:
+    name: Trigger copr builds
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      # Checkout push-to-registry action GitHub repository
+      - name: Checkout Push to Registry action
+        uses: actions/checkout@v4
+
+      - name: Trigger Builds
+        id: trigger-builds
+        shell: bash
+        run: |
+          for package in "eza" "starship"; do
+              curl -X 'POST' \
+                  -u "${{ secrets.COPR_LOGIN }}:${{ secrets.COPR_TOKEN }}" \
+                  -H 'Content-Type: application/json' \
+                  -d "{\"ownername\": \"${{ secrets.COPR_USERNAME }}\", \"projectname\": \"${{ secrets.COPR_PROJECT }}\", \"package_name\": \"$package\"}" \
+                  https://copr.fedorainfracloud.org/api_3/package/build
+          done
