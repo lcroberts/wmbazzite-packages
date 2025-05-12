@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define ver %(curl -s https://api.github.com/repos/starship/starship/releases/latest | jq -r 'first(.name | select(test("^v[0-9]")))' | sed -E 's/^v//')
+%define ver %(curl -s https://api.github.com/repos/starship/starship/releases/latest | grep tag_name | sed -E 's/.*v(.*?)".*/\1/')
 
 Name:    starship
 Version: %{ver}
