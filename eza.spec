@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define ver %(curl -s https://api.github.com/repos/eza-community/eza/releases/latest | grep tag_name | sed -E 's/.*v(.*?)".*/\1/')
+%define ver %(curl -s https://api.github.com/repos/eza-community/eza/releases/latest | grep tag_name | cut -d '"' -f4 | cut -d 'v' -f2)
 
 Name:    eza
 Version: %{ver}
