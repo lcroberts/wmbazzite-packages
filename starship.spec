@@ -35,7 +35,7 @@ cargo tree --workspace --edges no-build,no-dev,no-proc-macro --no-dedupe --prefi
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 %files
-%license LICENSE.txt LICENSE.summary LICENSE.dependencies
+%license LICENSE LICENSE.summary LICENSE.dependencies
 %doc CHANGELOG.md README.md
 %{_bindir}/%{name}
 
