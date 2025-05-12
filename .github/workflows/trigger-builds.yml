@@ -25,9 +25,9 @@ jobs:
         shell: bash
         run: |
           for package in "eza" "starship" "ghostty"; do
-              curl -X 'POST' \
+              curl --fail-with-body -X 'POST' \
                   -u "${{ secrets.COPR_LOGIN }}:${{ secrets.COPR_TOKEN }}" \
                   -H 'Content-Type: application/json' \
                   -d "{\"ownername\": \"${{ secrets.COPR_USERNAME }}\", \"projectname\": \"${{ secrets.COPR_PROJECT }}\", \"package_name\": \"$package\"}" \
-                  https://copr.fedorainfracloud.org/api_3/package/build
+                  https://copr.fedorainfracloud.org/api_3/package/build || exit 1
           done
