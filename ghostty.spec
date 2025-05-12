@@ -1,7 +1,8 @@
 %global debug_package %{nil}
+%define ver %(curl -s https://api.github.com/repos/ghostty-org/ghostty/git/refs/tags | grep '"ref"' | tail -n 1 | cut -d '"' -f4 | cut -d '/' -f3 | cut -d 'v' -f2)
 
 Name:    ghostty
-Version: 1.1.3
+Version: %{ver}
 Release: %autorelease
 Summary:  Fast, native, feature-rich terminal emulator pushing modern features.
 License: MIT
