@@ -1,7 +1,8 @@
 %global debug_package %{nil}
+%define ver %(curl -s https://api.github.com/repos/starship/starship/releases/latest | jq -r 'first(.name | select(test("^v[0-9]")))' | sed -E 's/^v//')
 
 Name:    starship
-Version: 1.23.0
+Version: %{ver}
 Release: %autorelease
 Summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 License: ISC License

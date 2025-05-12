@@ -1,7 +1,8 @@
 %global debug_package %{nil}
+%define ver %(curl -s https://api.github.com/repos/eza-community/eza/releases/latest | jq -r 'first(.name | select(test("^eza v?[0-9]")))' | sed -E 's/.*v//')
 
 Name:    eza
-Version: 0.21.3
+Version: %{ver}
 Release: %autorelease
 Summary: A modern replacement for ls
 # Main package is EUPL-1.2, remaining licenses are from statically linked dependencies
