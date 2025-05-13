@@ -1,5 +1,5 @@
 %global debug_package %{nil}
-%define ver %(curl -s https://api.github.com/repos/ghostty-org/ghostty/git/refs/tags | grep '"ref"' | tail -n 1 | cut -d '"' -f4 | cut -d '/' -f3 | cut -d 'v' -f2)
+%define ver %(curl -s https://api.github.com/repos/ghostty-org/ghostty/git/refs/tags | grep '"ref"' | cut -d '"' -f4 | cut -d '/' -f3 | cut -d 'v' -f2 | sort -V | tail -n 2 | head -n 1)
 
 Name:    ghostty
 Version: %{ver}
