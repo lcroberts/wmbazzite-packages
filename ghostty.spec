@@ -46,12 +46,12 @@ Ghostty provides all three.
 %autosetup -n %{name}-%{version}
 
 %build
-ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/check-zig-cache.sh --update
-ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/fetch-zig-cache.sh
+# ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/check-zig-cache.sh --update
+# ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/fetch-zig-cache.sh
+    # --system "/tmp/offline-cache/p" \
 zig build \
     --summary all \
     --prefix "%{buildroot}%{_prefix}" \
-    --system "/tmp/offline-cache/p" \
     -Dversion-string=%{version}-%{release} \
     -Doptimize=ReleaseFast \
     -Dcpu=baseline \
