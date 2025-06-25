@@ -24,7 +24,7 @@ jobs:
         id: trigger-builds
         shell: bash
         run: |
-          for package in "eza" "starship"; do
+          for package in "eza" "starship" "ghostty"; do
               curl --fail-with-body -X 'POST' \
                   -u "${{ secrets.COPR_LOGIN }}:${{ secrets.COPR_TOKEN }}" \
                   -H 'Content-Type: application/json' \
