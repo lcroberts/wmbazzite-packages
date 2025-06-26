@@ -45,19 +45,18 @@ available, they all force you to choose between speed, features, or native UIs.
 Ghostty provides all three.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-tip
 
 %build
-ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/fetch-zig-cache.sh
 zig build \
     --summary all \
     --prefix "%{buildroot}%{_prefix}" \
     -Dversion-string=%{version}-%{release} \
-    --system "/tmp/offline-cache/p" \
     -Doptimize=ReleaseFast \
     -Dcpu=baseline \
     -Dpie=true \
     -Demit-docs
+
 rm %{buildroot}%{_prefix}/share/terminfo/g/ghostty
 
 %files
