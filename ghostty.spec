@@ -24,6 +24,7 @@ BuildRequires: pixman-devel
 BuildRequires: pkg-config
 BuildRequires: zig
 BuildRequires: zlib-ng-devel
+BuildRequires: blueprint-compiler
 
 
 Requires: fontconfig
