@@ -1,13 +1,15 @@
 %global debug_package %{nil}
 %define ver %(curl -s https://api.github.com/repos/ghostty-org/ghostty/git/refs/tags | grep '"ref"' | cut -d '"' -f4 | cut -d '/' -f3 | cut -d 'v' -f2 | sort -V | tail -n 2 | head -n 1)
+%define tip %(curl -s https://api.github.com/repos/ghostty-org/ghostty/git/refs/tags | grep "sha" | head -n 1 | cut -d '"' -f4)
 
 Name:    ghostty
-Version: %{ver}
+Version: %{ver}+%{tip}
 Release: %autorelease
 Summary:  Fast, native, feature-rich terminal emulator pushing modern features.
 License: MIT
 URL:     https://github.com/ghostty-org/%{name}
-Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/v%{version}.tar.gz
+# Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/tip.tar.gz
 
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
