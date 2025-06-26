@@ -92,6 +92,24 @@ rm %{buildroot}%{_prefix}/share/terminfo/g/ghostty
 %{_prefix}/share/vim/vimfiles/ftplugin/ghostty.vim
 %{_prefix}/share/vim/vimfiles/syntax/ghostty.vim
 %{_prefix}/share/zsh/site-functions/_ghostty
+%{_prefix}/share/dbus-1/services/com.mitchellh.ghostty.service
+%{_prefix}/share/locale/ca_ES.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/de_DE.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/es_BO.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/fr_FR.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/id_ID.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/ja_JP.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/mk_MK.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/nb_NO.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/nl_NL.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/pl_PL.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/pt_BR.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/ru_RU.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/tr_TR.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/uk_UA.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/locale/zh_CN.UTF-8/LC_MESSAGES/com.mitchellh.ghostty.mo
+%{_prefix}/share/metainfo/com.mitchellh.ghostty.metainfo.xml
+%{_prefix}/share/systemd/user/com.mitchellh.ghostty.service
 
 %changelog
 %autochangelog
