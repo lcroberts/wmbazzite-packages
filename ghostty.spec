@@ -11,33 +11,11 @@ URL:     https://github.com/ghostty-org/%{name}
 # Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/v%{version}.tar.gz
 Source0:  https://github.com/ghostty-org/%{name}/archive/refs/tags/tip.tar.gz
 
-BuildRequires: fontconfig-devel
-BuildRequires: freetype-devel
-BuildRequires: glib2-devel
 BuildRequires: gtk4-devel
-BuildRequires: harfbuzz-devel
-BuildRequires: libadwaita-devel
-BuildRequires: libpng-devel
-BuildRequires: oniguruma-devel
-BuildRequires: pandoc-cli
-BuildRequires: pixman-devel
-BuildRequires: pkg-config
 BuildRequires: zig
-BuildRequires: zlib-ng-devel
+BuildRequires: libadwaita-devel
 BuildRequires: blueprint-compiler
-
-
-Requires: fontconfig
-Requires: freetype
-Requires: glib2
-Requires: gtk4
-Requires: harfbuzz
-Requires: libadwaita
-Requires: libpng
-Requires: oniguruma
-Requires: pixman
-Requires: zlib-ng
-Requires: ncurses-term
+BuildRequires: gettext
 
 %description
 Ghostty is a terminal emulator that differentiates itself by being fast,
@@ -49,9 +27,11 @@ Ghostty provides all three.
 %autosetup -n %{name}-tip
 
 %build
+ZIG_GLOBAL_CACHE_DIR=/tmp/offline-cache ./nix/build-support/fetch-zig-cache.sh
 zig build \
     --summary all \
     --prefix "%{buildroot}%{_prefix}" \
+    --system /tmp/offline-cache/p \
     -Dversion-string=%{version}-%{release} \
     -Doptimize=ReleaseFast \
     -Dcpu=baseline \
