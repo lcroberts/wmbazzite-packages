@@ -35,6 +35,8 @@ License:        MIT
 URL:            %{gourl}
 Source:         %{gosource}
 
+BuildRequires: git
+
 %description %{common_description}
 
 %gopkg
