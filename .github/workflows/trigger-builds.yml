@@ -2,7 +2,7 @@
 name: trigger-builds
 on:
   schedule:
-    - cron: "05 8 * * *" # 8:05am UTC everyday
+    - cron: "30 8 * * 0" # 8:30am UTC every sunday
   workflow_dispatch:
 
 jobs:
