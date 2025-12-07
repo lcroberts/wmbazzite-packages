@@ -8,3 +8,4 @@ following applications have packages.
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [starship](https://starship.rs/)
 - [yazi](https://yazi-rs.github.io/)
+
